@@ -1,31 +1,65 @@
-import { EmptyState } from "@/components/ui/EmptyState";
+"use client";
+
+import { useEffect } from "react";
+import { Cell } from "@/components/ui/Cell";
+import { LoadError, Loading } from "@/components/ui/Loading";
+import { Ring } from "@/components/ui/Ring";
 import { Screen } from "@/components/ui/Screen";
 import { Section } from "@/components/ui/Section";
-
-const PUZZLES = [
-  { title: "Собери норму", text: "Расставьте части статьи в правильном порядке." },
-  { title: "Найди пару", text: "Соедините термин с определением или орган с полномочием." },
-  { title: "По порядку", text: "Восстановите последовательность процедуры." },
-  { title: "Разложи по группам", text: "Распределите права и обязанности по участникам." },
-  { title: "Дело дня", text: "Одна ситуация в день: разберитесь, кто прав и почему." },
-];
+import { useContent } from "@/data/content";
+import { useLoadedContent } from "@/data/hooks";
+import { plural } from "@/lib/plural";
+import { useGames } from "@/stores/games";
 
 export default function PlayPage() {
+  const status = useLoadedContent();
+  const puzzles = useContent((s) => s.puzzles);
+  const error = useContent((s) => s.error);
+  const games = useGames((s) => s.data);
+  const loadGames = useGames((s) => s.load);
+  useEffect(() => {
+    void loadGames();
+  }, [loadGames]);
+
+  if (status === "error") return <Screen title="Играть"><LoadError message={error} /></Screen>;
+  if (status !== "ready") return <Screen title="Играть"><Loading /></Screen>;
+
   return (
-    <Screen title="Играть">
-      <Section padded>
-        <EmptyState icon="puzzle" title="Головоломки в работе">
-          Они появятся вместе с первыми вопросами: каждая головоломка собирается из тех же проверенных норм.
-        </EmptyState>
+    <Screen title="Играть" subtitle="Режимы как на конкурсе «Ты — лидер» и головоломки с прошлых конкурсов.">
+      <Section header="Правовые бои" footer="Вопросы из банка «Правовухи». Рекорды сохраняются в вашем аккаунте Telegram.">
+        <Cell
+          href="/play/two-one"
+          icon="duel"
+          iconTone="violet"
+          title="2 к 1"
+          subtitle="Пять права на ошибку, после шестой — вылет"
+          after={games.twoToOne > 0 ? `${games.twoToOne}` : undefined}
+        />
+        <Cell
+          href="/play/biathlon"
+          icon="target2"
+          iconTone="teal"
+          title="Правовой биатлон"
+          subtitle="Отвечайте быстро: одна ошибка — и вы выбыли"
+          after={games.biathlon > 0 ? `${games.biathlon}` : undefined}
+        />
       </Section>
 
-      <Section header="Что готовим">
-        {PUZZLES.map((puzzle) => (
-          <div key={puzzle.title} className="px-4 py-3">
-            <p className="text-[16px] font-medium text-fg">{puzzle.title}</p>
-            <p className="mt-0.5 text-[14px] leading-snug text-hint">{puzzle.text}</p>
-          </div>
-        ))}
+      <Section header="Головоломки" footer="Ребусы, логотипы, люди, даты, шифры и звуки. Ответ проверяете сами: подумайте и откройте его.">
+        {puzzles.map((set) => {
+          const solved = games.puzzles[set.id]?.length ?? 0;
+          return (
+            <Cell
+              key={set.id}
+              href={`/play/puzzles?set=${set.id}`}
+              icon={set.id === "new" ? "bulb" : "puzzle"}
+              iconTone={set.id === "new" ? "orange" : "blue"}
+              title={set.title}
+              subtitle={`${plural(set.items.length, "головоломка", "головоломки", "головоломок")}${solved ? ` · отгадано ${solved}` : ""}`}
+              after={solved ? <Ring value={solved / set.items.length} /> : undefined}
+            />
+          );
+        })}
       </Section>
     </Screen>
   );

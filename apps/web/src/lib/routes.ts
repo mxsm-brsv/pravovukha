@@ -20,7 +20,9 @@ export function parentPath(pathname: string | null): string {
   return parent === "" ? "/" : parent;
 }
 
-/** Ссылки в статическом экспорте заканчиваются слешем. */
+/** Ссылки в статическом экспорте заканчиваются слешем; параметры после «?» сохраняем. */
 export function href(path: string): string {
-  return path === "/" ? "/" : `${normalizePath(path)}/`;
+  const [base = "/", query] = path.split("?", 2);
+  const clean = base === "/" ? "/" : `${normalizePath(base)}/`;
+  return query ? `${clean}?${query}` : clean;
 }

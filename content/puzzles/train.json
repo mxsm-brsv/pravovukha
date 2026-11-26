@@ -1,0 +1,303 @@
+{
+  "id": "train",
+  "title": "Тренировочные головоломки",
+  "subtitle": "Логотипы, ребусы, люди и даты",
+  "order": 5,
+  "items": [
+    {
+      "id": "g-01",
+      "prompt": "Что объединяет этих людей?",
+      "image": "puzzles/g1/01.webp",
+      "answer": "Правительство РФ"
+    },
+    {
+      "id": "g-02",
+      "prompt": "Цвета какого логотипа представлены?",
+      "image": "puzzles/g1/02.webp",
+      "answer": "Логотип «2026 — Год единства народов России»",
+      "answerImage": "puzzles/g1/02a.webp"
+    },
+    {
+      "id": "g-03",
+      "prompt": "Назовите город, указанный на картинках",
+      "image": "puzzles/g1/03.webp",
+      "answer": "Екатеринбург"
+    },
+    {
+      "id": "g-04",
+      "prompt": "Какой цвет закрашен?",
+      "image": "puzzles/g1/04.webp",
+      "answer": "Розовый",
+      "answerImage": "puzzles/g1/04a.webp"
+    },
+    {
+      "id": "g-05",
+      "prompt": "Что загадано в картинках?",
+      "image": "puzzles/g1/05.webp",
+      "answer": "Уровни образования"
+    },
+    {
+      "id": "g-06",
+      "prompt": "Цвета какого логотипа представлены?",
+      "image": "puzzles/g1/06.webp",
+      "answer": "Логотип СКС Профсоюза",
+      "answerImage": "puzzles/g1/06a.webp"
+    },
+    {
+      "id": "g-07",
+      "prompt": "Назовите скрытую часть",
+      "image": "puzzles/g1/07.webp",
+      "answer": "Образовательный стандарт"
+    },
+    {
+      "id": "g-08",
+      "prompt": "Цвета какого логотипа представлены?",
+      "image": "puzzles/g1/08.webp",
+      "answer": "Логотип Общероссийского Профсоюза образования",
+      "answerImage": "puzzles/g1/08a.webp"
+    },
+    {
+      "id": "g-09",
+      "prompt": "Назовите скрытое слово",
+      "image": "puzzles/g1/09.webp",
+      "answer": "Обучение"
+    },
+    {
+      "id": "g-10",
+      "prompt": "Цвета какого логотипа представлены?",
+      "image": "puzzles/g1/10.webp",
+      "answer": "Логотип Всероссийской школы-семинара «Стипком»",
+      "answerImage": "puzzles/g1/10a.webp"
+    },
+    {
+      "id": "g-11",
+      "prompt": "Назовите ФИО человека по фото",
+      "image": "puzzles/g1/11.webp",
+      "answer": "Прокопович Алексей Евгеньевич"
+    },
+    {
+      "id": "g-12",
+      "prompt": "Цвета какого логотипа представлены?",
+      "image": "puzzles/g1/12.webp",
+      "answer": "Логотип конкурса на лучшее профсоюзное бюро «Ты — лидер»",
+      "answerImage": "puzzles/g1/12a.webp"
+    },
+    {
+      "id": "g-13",
+      "prompt": "Назовите скрытые слова",
+      "image": "puzzles/g1/13.webp",
+      "answer": "Традиционные ценности"
+    },
+    {
+      "id": "g-14",
+      "prompt": "Цвета какого логотипа представлены?",
+      "image": "puzzles/g1/14.webp",
+      "answer": "Логотип медиакластера «Точка сбора»",
+      "answerImage": "puzzles/g1/14a.webp"
+    },
+    {
+      "id": "g-15",
+      "prompt": "Назовите ФИО и должность человека по фото",
+      "image": "puzzles/g1/15.webp",
+      "answer": "Елшина Елена Станиславовна — заместитель Председателя Профсоюза"
+    },
+    {
+      "id": "g-16",
+      "prompt": "Цвета какого логотипа представлены?",
+      "image": "puzzles/g1/16.webp",
+      "answer": "Логотип форума студенческих советов общежитий «Общага РФ»",
+      "answerImage": "puzzles/g1/16a.webp"
+    },
+    {
+      "id": "g-17",
+      "prompt": "В каком сообществе ВКонтакте такое описание?",
+      "image": "puzzles/g1/17.webp",
+      "answer": "«Движение первых»"
+    },
+    {
+      "id": "g-18",
+      "prompt": "Цвета какого логотипа представлены?",
+      "image": "puzzles/g1/18.webp",
+      "answer": "Логотип практического форума «Лекториум»",
+      "answerImage": "puzzles/g1/18a.webp"
+    },
+    {
+      "id": "g-19",
+      "prompt": "Какой премией награждён человек на фото?",
+      "image": "puzzles/g1/19.webp",
+      "answer": "Премией имени В. М. Яковлева"
+    },
+    {
+      "id": "g-20",
+      "prompt": "Чего не хватает на логотипе?",
+      "image": "puzzles/g1/20.webp",
+      "answer": "Зелёного листа",
+      "answerImage": "puzzles/g1/20a.webp"
+    },
+    {
+      "id": "g-21",
+      "prompt": "В каком году конкурс «Ты — лидер» получил своё нынешнее название?",
+      "image": "puzzles/g1/21.webp",
+      "answer": "2019"
+    },
+    {
+      "id": "g-22",
+      "prompt": "Чего не хватает на логотипе?",
+      "image": "puzzles/g1/22.webp",
+      "answer": "Элементов экрана",
+      "answerImage": "puzzles/g1/22a.webp"
+    },
+    {
+      "id": "g-23",
+      "prompt": "Угадайте, чья это анкета? Назовите имя и фамилию",
+      "image": "puzzles/g1/23.webp",
+      "answer": "Мария Нечаева"
+    },
+    {
+      "id": "g-24",
+      "prompt": "Какой цвет закрашен?",
+      "image": "puzzles/g1/24.webp",
+      "answer": "Голубой",
+      "answerImage": "puzzles/g1/24a.webp"
+    },
+    {
+      "id": "g-25",
+      "prompt": "Что скрывается за местоимением?",
+      "image": "puzzles/g1/25.webp",
+      "answer": "Устав"
+    },
+    {
+      "id": "g-26",
+      "prompt": "Найдите ошибку",
+      "image": "puzzles/g1/26.webp",
+      "answer": "Не «Education and Social…», а «Education and Science Employees’ Union of Russia»"
+    },
+    {
+      "id": "g-27",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/27.webp",
+      "answer": "Университет"
+    },
+    {
+      "id": "g-28",
+      "prompt": "Что отмечено в календаре?",
+      "image": "puzzles/g1/28.webp",
+      "answer": "27 июля — День памяти детей — жертв войны в Донбассе"
+    },
+    {
+      "id": "g-29",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/29.webp",
+      "answer": "Поколение"
+    },
+    {
+      "id": "g-30",
+      "prompt": "Решите уравнение",
+      "image": "puzzles/g1/30.webp",
+      "answer": "5 + 18 − 12 = 11"
+    },
+    {
+      "id": "g-31",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/31.webp",
+      "answer": "Развитие"
+    },
+    {
+      "id": "g-32",
+      "prompt": "Что пропущено?",
+      "image": "puzzles/g1/32.webp",
+      "answer": "Патриотизм"
+    },
+    {
+      "id": "g-33",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/33.webp",
+      "answer": "Дотация"
+    },
+    {
+      "id": "g-34",
+      "prompt": "Какой форум зашифрован тут?",
+      "image": "puzzles/g1/34.webp",
+      "answer": "Форум «Родные — любимые»"
+    },
+    {
+      "id": "g-35",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/35.webp",
+      "answer": "Аттестация"
+    },
+    {
+      "id": "g-36",
+      "prompt": "Из какой группы ВКонтакте сделан этот скриншот?",
+      "image": "puzzles/g1/36.webp",
+      "answer": "Всероссийский конкурс «Ты — лидер»"
+    },
+    {
+      "id": "g-37",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/37.webp",
+      "answer": "Росмолодёжь.Гранты"
+    },
+    {
+      "id": "g-38",
+      "prompt": "Какой конкурс описал Deepseek?",
+      "image": "puzzles/g1/38.webp",
+      "answer": "Всероссийский конкурс «Студенческий лидер»"
+    },
+    {
+      "id": "g-39",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/39.webp",
+      "answer": "Отечество"
+    },
+    {
+      "id": "g-40",
+      "prompt": "Назовите дату",
+      "image": "puzzles/g1/40.webp",
+      "answer": "24 апреля"
+    },
+    {
+      "id": "g-41",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/41.webp",
+      "answer": "Удостоверение"
+    },
+    {
+      "id": "g-42",
+      "prompt": "Чего не хватает на логотипе?",
+      "image": "puzzles/g1/42.webp",
+      "answer": "Стрелки",
+      "answerImage": "puzzles/g1/42a.webp"
+    },
+    {
+      "id": "g-43",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/43.webp",
+      "answer": "Материальная помощь"
+    },
+    {
+      "id": "g-44",
+      "prompt": "Все слова заменены на синонимы. Что зашифровано?",
+      "image": "puzzles/g1/44.webp",
+      "answer": "Студенческий координационный совет"
+    },
+    {
+      "id": "g-45",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/45.webp",
+      "answer": "Указ Президента"
+    },
+    {
+      "id": "g-46",
+      "prompt": "Какие два человека объединены на фото и что их объединяет? Назовите ФИО и должности",
+      "image": "puzzles/g1/46.webp",
+      "answer": "Шабельник Виктор Владимирович (заместитель Председателя Профсоюза) и Сафаров Зафар Зафарович (Председатель СКС Профсоюза); оба — председатели СКС"
+    },
+    {
+      "id": "g-47",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/g1/47.webp",
+      "answer": "Профсоюзный билет"
+    }
+  ]
+}

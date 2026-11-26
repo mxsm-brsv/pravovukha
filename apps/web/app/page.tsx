@@ -2,22 +2,18 @@
 
 import { answeredToday, dayKey, visibleStreak } from "@pravovukha/shared";
 import Link from "next/link";
-import { Icon, type IconName } from "@/components/ui/Icon";
+import { Cell } from "@/components/ui/Cell";
+import { Icon } from "@/components/ui/Icon";
 import { ProgressRing } from "@/components/ui/ProgressRing";
 import { Screen } from "@/components/ui/Screen";
 import { Section } from "@/components/ui/Section";
-import { days, questions } from "@/lib/plural";
+import { useContent } from "@/data/content";
+import { useLoadedContent } from "@/data/hooks";
+import { days, documentsDative, questions } from "@/lib/plural";
 import { href } from "@/lib/routes";
 import { useEnvStore } from "@/stores/env";
 import { useProfileStore } from "@/stores/profile";
 import { haptic } from "@/tma/haptics";
-
-const MODES: ReadonlyArray<{ icon: IconName; title: string; text: string }> = [
-  { icon: "cards", title: "Учить", text: "Карточки и тесты с пояснением к каждому ответу. Трудные вопросы возвращаются чаще." },
-  { icon: "timer", title: "Экзамен", text: "20 вопросов за 20 минут, не больше двух ошибок. За ошибку — пять дополнительных вопросов." },
-  { icon: "puzzle", title: "Играть", text: "Головоломки по нормам: собери статью, найди пару, расставь по порядку." },
-  { icon: "calendar", title: "Дело дня", text: "Одна ситуация в день, одна и та же у всех." },
-];
 
 function Greeting() {
   const ready = useEnvStore((s) => s.ready);
@@ -73,36 +69,35 @@ function TodayCard() {
   );
 }
 
+function StartSection() {
+  const status = useLoadedContent();
+  const total = useContent((s) => s.questions.length);
+  const decks = useContent((s) => s.decks.length);
+  const puzzles = useContent((s) => s.puzzles.reduce((n, set) => n + set.items.length, 0));
+  const ready = status === "ready";
+
+  return (
+    <>
+      <Section header="Начать" footer={ready ? `${questions(total)} с пояснениями по ${documentsDative(decks)} проекта «Правовуха».` : undefined}>
+        <Cell href="/learn/train?deck=all" icon="shuffle" iconTone="blue" title="Тренировка" subtitle="10 вопросов: сначала ошибки и новые" />
+        <Cell href="/learn/exam?deck=all" icon="timer" iconTone="orange" title="Экзамен" subtitle="20 вопросов за 20 минут, не больше двух ошибок" />
+        <Cell href="/learn" icon="book" iconTone="green" title="Темы и документы" subtitle="Устав, законы, приказы, положения СКС" />
+      </Section>
+      <Section header="Играть">
+        <Cell href="/play/two-one" icon="duel" iconTone="violet" title="2 к 1" subtitle="Пять права на ошибку" />
+        <Cell href="/play/biathlon" icon="target2" iconTone="teal" title="Правовой биатлон" subtitle="На время, до первой ошибки" />
+        <Cell href="/play" icon="puzzle" iconTone="red" title="Головоломки" subtitle={ready ? `${puzzles} ребусов, шифров и загадок` : "Ребусы, шифры и загадки"} />
+      </Section>
+    </>
+  );
+}
+
 export default function HomePage() {
   return (
     <Screen title="С правовухой на ты" subtitle={<Greeting />}>
       <TodayCard />
 
-      <Section header="Курс" padded footer="Мы сами пишем вопросы по документам и проверяем каждый, поэтому выпускаем их частями.">
-        <div className="flex items-start gap-3">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[color-mix(in_srgb,var(--app-button)_14%,transparent)] text-button">
-            <Icon name="scale" size={24} />
-          </span>
-          <div className="min-w-0">
-            <p className="text-[17px] font-semibold text-fg">Банк вопросов готовится</p>
-            <p className="mt-0.5 text-[15px] leading-snug text-hint">
-              Вопросы с пояснениями по Уставу Профсоюза и законам об образовании появятся в ближайшем обновлении.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      <Section header="Что будет внутри">
-        {MODES.map((mode) => (
-          <div key={mode.title} className="flex items-start gap-3 px-4 py-3">
-            <Icon name={mode.icon} size={22} className="mt-0.5 shrink-0 text-button" />
-            <div className="min-w-0">
-              <p className="text-[16px] font-medium text-fg">{mode.title}</p>
-              <p className="mt-0.5 text-[14px] leading-snug text-hint">{mode.text}</p>
-            </div>
-          </div>
-        ))}
-      </Section>
+      <StartSection />
     </Screen>
   );
 }

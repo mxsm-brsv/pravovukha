@@ -6,6 +6,7 @@ import {
   answeredToday,
   defaultProfile,
   parseProfile,
+  registerAnswers,
   serializeProfile,
 } from "./profile";
 
@@ -50,5 +51,18 @@ describe("profile", () => {
     p.today = { day: "2026-11-25", answered: 8 };
     expect(answeredToday(p, "2026-11-25")).toBe(8);
     expect(answeredToday(p, "2026-11-26")).toBe(0);
+  });
+});
+
+describe("registerAnswers", () => {
+  it("считает ответы за день и продлевает серию", () => {
+    let p = defaultProfile();
+    p = registerAnswers(p, "2026-11-26", 3);
+    p = registerAnswers(p, "2026-11-26");
+    expect(p.today).toEqual({ day: "2026-11-26", answered: 4 });
+    expect(p.streak.current).toBe(1);
+    p = registerAnswers(p, "2026-11-27");
+    expect(p.today.answered).toBe(1);
+    expect(p.streak.current).toBe(2);
   });
 });

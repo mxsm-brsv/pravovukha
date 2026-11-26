@@ -2,3 +2,8 @@ export * from "./progress/day";
 export * from "./progress/streak";
 export * from "./progress/profile";
 export * from "./links/start-param";
+export * from "./quiz/answer";
+export * from "./quiz/random";
+export * from "./quiz/progress";
+export * from "./quiz/exam";
+export * from "./quiz/games";

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { isDayKey } from "./day";
-import { emptyStreak } from "./streak";
+import { emptyStreak, registerActivity } from "./streak";
 
 /**
  * Ключ профиля в Telegram CloudStorage. В ключах допустимы только A-Z, a-z, 0-9, _ и -
@@ -82,4 +82,16 @@ export function serializeProfile(profile: Profile): string {
 /** Сколько вопросов пройдено сегодня; вчерашний счётчик сегодня не считается. */
 export function answeredToday(profile: Profile, today: string): number {
   return profile.today.day === today ? profile.today.answered : 0;
+}
+
+/**
+ * Учитывает ответы: увеличивает счётчик дня (вчерашний сбрасывается) и продлевает серию.
+ */
+export function registerAnswers(profile: Profile, today: string, count = 1): Profile {
+  const answered = answeredToday(profile, today) + count;
+  return {
+    ...profile,
+    today: { day: today, answered },
+    streak: registerActivity(profile.streak, today),
+  };
 }

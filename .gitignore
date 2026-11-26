@@ -12,3 +12,5 @@ coverage/
 *.tsbuildinfo
 # Next.js создаёт этот файл сам при сборке и при `next typegen`
 next-env.d.ts
+# Генерируется из content/ при сборке (pnpm --filter @pravovukha/web content)
+apps/web/public/data/

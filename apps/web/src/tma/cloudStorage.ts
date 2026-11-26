@@ -8,6 +8,8 @@ import { getWebApp, supports } from "./telegram";
 export interface KeyValueStorage {
   readonly kind: "telegram" | "local" | "memory";
   get(key: string): Promise<string | null>;
+  /** Несколько ключей одним запросом; отсутствующие — null. */
+  getMany(keys: string[]): Promise<Record<string, string | null>>;
   set(key: string, value: string): Promise<void>;
   remove(key: string): Promise<void>;
 }
@@ -38,6 +40,20 @@ function telegramStorage(): KeyValueStorage {
         storage().getItem(key, (error, value) => {
           if (error) reject(new Error(`CloudStorage.getItem: ${error}`));
           else resolve(value ? value : null);
+        });
+      });
+    },
+    getMany(keys) {
+      keys.forEach(assertKey);
+      if (keys.length === 0) return Promise.resolve({});
+      return new Promise((resolve, reject) => {
+        storage().getItems(keys, (error, values) => {
+          if (error) reject(new Error(`CloudStorage.getItems: ${error}`));
+          else {
+            const out: Record<string, string | null> = {};
+            for (const key of keys) out[key] = values?.[key] ? values[key]! : null;
+            resolve(out);
+          }
         });
       });
     },
@@ -84,6 +100,14 @@ function localStorageFallback(): KeyValueStorage {
     async get(key) {
       assertKey(key);
       return local ? local.getItem(LOCAL_PREFIX + key) : (memory.get(key) ?? null);
+    },
+    async getMany(keys) {
+      const out: Record<string, string | null> = {};
+      for (const key of keys) {
+        assertKey(key);
+        out[key] = local ? local.getItem(LOCAL_PREFIX + key) : (memory.get(key) ?? null);
+      }
+      return out;
     },
     async set(key, value) {
       assertKey(key);

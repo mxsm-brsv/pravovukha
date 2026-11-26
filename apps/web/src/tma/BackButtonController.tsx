@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { href, isTabRoot, parentPath } from "@/lib/routes";
+import { useBackStore } from "@/stores/back";
 import { haptic } from "./haptics";
 import { getWebApp, isInTelegram, supports } from "./telegram";
 
@@ -15,13 +16,14 @@ export function BackButtonController() {
   const router = useRouter();
   const [native, setNative] = useState(false);
   const visible = !isTabRoot(pathname);
+  const target = useBackStore((s) => s.target);
 
   useEffect(() => setNative(supports("backButton")), []);
 
   const goBack = useCallback(() => {
     haptic.tap();
-    router.push(href(parentPath(pathname)));
-  }, [pathname, router]);
+    router.push(target ? href(target) : href(parentPath(pathname)));
+  }, [pathname, router, target]);
 
   useEffect(() => {
     if (!native) return;

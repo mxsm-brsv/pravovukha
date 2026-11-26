@@ -1,0 +1,142 @@
+{
+  "id": "pfo26",
+  "title": "Головоломки ПФО 2026",
+  "subtitle": "Вопросы с конкурса. Должности и проекты — на момент проведения",
+  "order": 2,
+  "items": [
+    {
+      "id": "p26-01",
+      "prompt": "Назовите проект СКС",
+      "image": "puzzles/pfo26/01.webp",
+      "answer": "«Студенческий лидер»"
+    },
+    {
+      "id": "p26-02",
+      "prompt": "Назовите должность человека",
+      "image": "puzzles/pfo26/02.webp",
+      "answer": "Заместитель Председателя Профсоюза — М. В. Авдеенко",
+      "answerImage": "puzzles/pfo26/02a.webp"
+    },
+    {
+      "id": "p26-03",
+      "prompt": "Назовите праздник",
+      "image": "puzzles/pfo26/03.webp",
+      "answer": "8 февраля — День российской науки"
+    },
+    {
+      "id": "p26-04",
+      "prompt": "Решите пример",
+      "image": "puzzles/pfo26/04.webp",
+      "answer": "10 + 36 = 46 (ст. 10 и ст. 36 Закона об образовании)"
+    },
+    {
+      "id": "p26-05",
+      "prompt": "Кому принадлежит этот телефон? Назовите имя и фамилию",
+      "image": "puzzles/pfo26/05.webp",
+      "answer": "Нина Арзяева"
+    },
+    {
+      "id": "p26-06",
+      "prompt": "Какие слова мы скрыли?",
+      "image": "puzzles/pfo26/06.webp",
+      "answer": "Национальные проекты России",
+      "answerImage": "puzzles/pfo26/06a.webp"
+    },
+    {
+      "id": "p26-07",
+      "prompt": "На какой проект попадёт Кузя?",
+      "image": "puzzles/pfo26/07.webp",
+      "answer": "«Ты — лидер»"
+    },
+    {
+      "id": "p26-08",
+      "prompt": "Чему равен последний знак?",
+      "image": "puzzles/pfo26/08.webp",
+      "answer": "1"
+    },
+    {
+      "id": "p26-09",
+      "prompt": "Кто мог бы создать такую карточку товара? Назовите имя и фамилию",
+      "image": "puzzles/pfo26/09.webp",
+      "answer": "Виталий Антипин",
+      "answerImage": "puzzles/pfo26/09a.webp"
+    },
+    {
+      "id": "p26-10",
+      "prompt": "Назовите дату",
+      "image": "puzzles/pfo26/10.webp",
+      "answer": "1 мая"
+    },
+    {
+      "id": "p26-11",
+      "prompt": "Какая организация выложила этот пост?",
+      "image": "puzzles/pfo26/11.webp",
+      "answer": "Министерство науки и высшего образования РФ",
+      "answerImage": "puzzles/pfo26/11a.webp"
+    },
+    {
+      "id": "p26-12",
+      "prompt": "Кому могут принадлежать эти запросы?",
+      "image": "puzzles/pfo26/12.webp",
+      "answer": "Сафаров Зафар Зафарович",
+      "answerImage": "puzzles/pfo26/12a.webp"
+    },
+    {
+      "id": "p26-13",
+      "prompt": "Назовите мероприятие",
+      "image": "puzzles/pfo26/13.webp",
+      "answer": "Премия СКС Профсоюза",
+      "answerImage": "puzzles/pfo26/13a.webp"
+    },
+    {
+      "id": "p26-14",
+      "prompt": "Разгадайте ребус",
+      "image": "puzzles/pfo26/14.webp",
+      "answer": "Специалитет"
+    },
+    {
+      "id": "p26-15",
+      "prompt": "На каком событии сделана эта фотография?",
+      "image": "puzzles/pfo26/15.webp",
+      "answer": "Всемирный фестиваль молодёжи"
+    },
+    {
+      "id": "p26-16",
+      "prompt": "Расшифруйте слово",
+      "image": "puzzles/pfo26/16.webp",
+      "answer": "Профбилет"
+    },
+    {
+      "id": "p26-17",
+      "prompt": "Назовите три любых отличия",
+      "image": "puzzles/pfo26/17.webp",
+      "answer": "Отличия отмечены на картинке",
+      "answerImage": "puzzles/pfo26/17a.webp"
+    },
+    {
+      "id": "p26-18",
+      "prompt": "Расшифруйте слово. Подсказка: код 3",
+      "image": "puzzles/pfo26/18.webp",
+      "answer": "Аттестация (сдвиг на 3 буквы)"
+    },
+    {
+      "id": "p26-19",
+      "prompt": "Назовите ФИО человека",
+      "image": "puzzles/pfo26/19.webp",
+      "answer": "Арифуллин Илья Владимирович"
+    },
+    {
+      "id": "p26-20",
+      "prompt": "Сколько конфет получил каждый?",
+      "image": "puzzles/pfo26/20.webp",
+      "answer": "По 26: 42 + 36 = 78, 78 : 3 = 26"
+    },
+    {
+      "id": "p26-21",
+      "prompt": "Назовите именинника",
+      "image": "puzzles/pfo26/21.webp",
+      "answer": "СКС Профсоюза — 27 лет",
+      "answerImage": "puzzles/pfo26/21a.webp"
+    }
+  ]
+}

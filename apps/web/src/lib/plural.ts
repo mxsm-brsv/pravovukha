@@ -13,3 +13,4 @@ export function plural(n: number, one: string, few: string, many: string): strin
 
 export const days = (n: number) => plural(n, "день", "дня", "дней");
 export const questions = (n: number) => plural(n, "вопрос", "вопроса", "вопросов");
+export const documentsDative = (n: number) => plural(n, "документу", "документам", "документам");
