@@ -1,0 +1,20 @@
+{
+  "name": "pravovukha",
+  "private": true,
+  "description": "«С правовухой на ты» — Telegram Mini App для подготовки к правовым конкурсам",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev --filter=@pravovukha/web",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "check": "turbo run typecheck test"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.13",
+    "typescript": "6.0.3"
+  }
+}

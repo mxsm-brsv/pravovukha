@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/*
+ * Цвета берём из темы Telegram: telegram-web-app.js сам выставляет --tg-theme-* и
+ * обновляет их при смене темы. Значения после запятой — запасные для открытия в браузере.
+ * Свои цвета (успех, ошибка, предупреждение) подобраны отдельно для светлой и тёмной темы.
+ */
+:root {
+  --app-bg: var(--tg-theme-secondary-bg-color, #efeff4);
+  --app-section: var(--tg-theme-section-bg-color, var(--tg-theme-bg-color, #ffffff));
+  --app-fg: var(--tg-theme-text-color, #000000);
+  --app-hint: var(--tg-theme-hint-color, #8e8e93);
+  --app-subtitle: var(--tg-theme-subtitle-text-color, var(--tg-theme-hint-color, #6d6d72));
+  --app-link: var(--tg-theme-link-color, #2481cc);
+  --app-accent: var(--tg-theme-accent-text-color, var(--tg-theme-link-color, #2481cc));
+  --app-button: var(--tg-theme-button-color, #2481cc);
+  --app-button-fg: var(--tg-theme-button-text-color, #ffffff);
+  --app-destructive: var(--tg-theme-destructive-text-color, #e53935);
+  --app-separator: var(--tg-theme-section-separator-color, rgba(60, 60, 67, 0.18));
+  --app-success: #2e9e4f;
+  --app-error: #e0393e;
+  --app-warning: #e08a00;
+  --app-safe-top: calc(var(--tg-safe-area-inset-top, 0px) + var(--tg-content-safe-area-inset-top, 0px));
+  --app-safe-bottom: max(env(safe-area-inset-bottom, 0px), var(--tg-safe-area-inset-bottom, 0px));
+  --app-back-offset: 0px;
+  color-scheme: light;
+}
+
+/* В браузере на вложенных экранах сверху стоит запасная стрелка «Назад». */
+:root[data-fallback-back] {
+  --app-back-offset: 40px;
+}
+
+:root[data-scheme="dark"] {
+  --app-bg: var(--tg-theme-secondary-bg-color, #000000);
+  --app-section: var(--tg-theme-section-bg-color, var(--tg-theme-bg-color, #1c1c1e));
+  --app-fg: var(--tg-theme-text-color, #ffffff);
+  --app-hint: var(--tg-theme-hint-color, #8d8e93);
+  --app-subtitle: var(--tg-theme-subtitle-text-color, var(--tg-theme-hint-color, #98989e));
+  --app-link: var(--tg-theme-link-color, #3e88f7);
+  --app-accent: var(--tg-theme-accent-text-color, var(--tg-theme-link-color, #3e88f7));
+  --app-button: var(--tg-theme-button-color, #3e88f7);
+  --app-button-fg: var(--tg-theme-button-text-color, #ffffff);
+  --app-destructive: var(--tg-theme-destructive-text-color, #ff5a5f);
+  --app-separator: var(--tg-theme-section-separator-color, rgba(84, 84, 88, 0.55));
+  --app-success: #3fc06a;
+  --app-error: #ff5a5f;
+  --app-warning: #f2b544;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-app: var(--app-bg);
+  --color-section: var(--app-section);
+  --color-fg: var(--app-fg);
+  --color-hint: var(--app-hint);
+  --color-subtitle: var(--app-subtitle);
+  --color-link: var(--app-link);
+  --color-accent: var(--app-accent);
+  --color-button: var(--app-button);
+  --color-button-fg: var(--app-button-fg);
+  --color-destructive: var(--app-destructive);
+  --color-separator: var(--app-separator);
+  --color-success: var(--app-success);
+  --color-error: var(--app-error);
+  --color-warning: var(--app-warning);
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body {
+  background: var(--app-bg);
+  color: var(--app-fg);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+  text-size-adjust: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Подсветка нажатия для строк и карточек: заметная, но без резких вспышек. */
+.pressable {
+  transition: background-color 120ms ease;
+}
+
+.pressable:active:not(:disabled) {
+  background-color: color-mix(in srgb, var(--app-fg) 7%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--app-link);
+  outline-offset: 2px;
+}
